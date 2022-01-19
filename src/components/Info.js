@@ -3,13 +3,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 
 
-export default function Info() {
+export default function Info(props) {
+ 
     return (
-          <div className="info">
-        <img src="./images/ma-photo.png"  className="photo" />
-        <h1 className="info-title">Dadi Dabely</h1>
-        <h3 className="info-subtitle">Dévéloppeur Frontend</h3>
-        <h5 className="info-website">dabelydadi.website</h5>
+          <div 
+          className={props.darkMode ? "info" : "info--light"}
+          >
+        <img src="./images/ma-photo.png"  className="photo" alt="" />
+        <h1 
+        className={props.darkMode ? "info-title" : "info-title--light"}
+        >Dadi Dabely</h1>
+        <h3 
+        className={props.darkMode ?"info-subtitle" : "info-subtitle--light"}
+        >Dévéloppeur Frontend</h3>
+        <h5 className={props.darkMode ? "info-website" : "info-website--light"}
+        >dabelydadi.website</h5>
         <div className="info-btn">
           <button className="btn btn-email">
             <a href="mailto:dabelydadi@gmail.com">
@@ -20,7 +28,9 @@ export default function Info() {
               </a>
               </button>
           <button className="btn btn-linkedin">
-            <a href="https://www.linkedin.com/in/dabely-dadi/" target="_blank">
+            <a href="https://www.linkedin.com/in/dabely-dadi/" rel="noopener noreferrer"
+            target="_blank" 
+            >
             <span>
               <FontAwesomeIcon icon={['fab','linkedin']} className="icon"/>
             </span>

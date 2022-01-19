@@ -5,16 +5,27 @@ import Interest from "./components/Interest"
 import Footer from "./components/Footer"
 import "./components/FontAwesomeIcons"
 import "./style.css"
+import Toggler from "./components/Toggler"
 
 
 
 export default function App() {
+      const [darkMode, setDarkMode] = React.useState(false) 
+   
+       function toggleDarkMode(){
+           setDarkMode(prevMode => !prevMode)
+       }
+
     return (
         <div className="business-card">
-           <Info />
-           <About />
-           <Interest />
-           <Footer />
+            <Toggler 
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            />
+           <Info darkMode={darkMode}/>
+           <About darkMode={darkMode} />
+           <Interest darkMode={darkMode} />
+           <Footer darkMode={darkMode} />
         </div>
     )
 }

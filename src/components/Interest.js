@@ -1,12 +1,16 @@
 import React from "react"
 
-export default function Interest() {
+export default function Interest(props) {
      return (
-        <div className="interest">
-        <h3 className="interest-title">
+        <div 
+        className={props.darkMode ?"interest" : "interest--light"}
+        >
+        <h3 className={props.darkMode ? "interest-title" : "interest--title--light"}
+        >
          Centre d'intérets
         </h3>
-        <p className="interest-desc">
+        <p className={props.darkMode ? "interest-desc" : "interest-desc--light"}
+        >
             Foot. Lecture. Internet. Basketball. Entreprenariat. Amour du voyage. Pop music. Gastronomie.
         </p>
         </div>
